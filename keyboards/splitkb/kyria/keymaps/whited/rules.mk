@@ -1,9 +1,6 @@
 MCU = RP2040
 BOOTLOADER = rp2040
 
-# allow warnings until they get fixed for rp2040
-ALLOW_WARNINGS = yes
-
 # LTO must be disabled for RP2040 builds
 LTO_ENABLE = no
 
