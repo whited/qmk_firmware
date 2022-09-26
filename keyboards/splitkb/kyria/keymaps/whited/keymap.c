@@ -43,7 +43,7 @@ enum layers {
 #define MI_BSPC  LT(_NUM,KC_BSPC)
 #define MI_DEL   LT(_FUN,KC_DEL)
 
-#define MOU_SUP  TO(_MOUSE_SUPPORT)
+#define MOU_SUP  TG(_MOUSE_SUPPORT)
 
 
 // Home Row Mods (Qwerty)
