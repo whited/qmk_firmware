@@ -124,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |  GUI |  Alt | Shift| Ctrl |      |                              | CapW |  ←   |   ↓  |   →  | PgDn | Insert |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |      |      | Redo | Paste| Copy | Cut  | Undo |        |
+ * |        |      |      |      |      |      |      |      |  |      | NumLk| Redo | Paste| Copy | Cut  | Undo |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     KC_CAPS, KC_HOME, KC_UP  , KC_END , KC_PGUP, KC_DEL ,
       XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                     CAPSWRD, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_INS ,
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , XXXXXXX,
                                  _______, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT , KC_BSPC, KC_DEL , _______
     ),
 
@@ -237,9 +237,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_FUN] = LAYOUT(
-      XXXXXXX, KC_F12 , KC_F1  , KC_F1  , KC_F1  , KC_PSCR,                   /**/                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-      XXXXXXX, KC_F11 , KC_F1  , KC_F1  , KC_F1  , KC_SLCK,                   /**/                   XXXXXXX, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, XXXXXXX,
-      XXXXXXX, KC_F10 , KC_F1  , KC_F1  , KC_F1  , KC_PAUS, XXXXXXX, XXXXXXX, /**/ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_F12 , KC_F7  , KC_F8  , KC_F9  , KC_PSCR,                   /**/                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_F11 , KC_F4  , KC_F5  , KC_F6  , KC_SLCK,                   /**/                   XXXXXXX, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, XXXXXXX,
+      XXXXXXX, KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_PAUS, XXXXXXX, XXXXXXX, /**/ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                  _______, KC_APP , KC_SPC , KC_TAB , XXXXXXX, /**/ XXXXXXX, XXXXXXX, XXXXXXX, _______, _______
     ),
 
