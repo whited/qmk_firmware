@@ -120,20 +120,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Nav Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              | CapL | Home |   ↑  | End  | PgUp | Delete |
+ * |        |      |      |      |      |      |                              | Redo | Paste| Copy | Cut  | Undo | Delete |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  GUI |  Alt | Shift| Ctrl |      |                              | CapW |  ←   |   ↓  |   →  | PgDn | Insert |
+ * |        |  GUI |  Alt | Shift| Ctrl |      |                              | CapW |  ←   |   ↓  |   ↑  |   →  | Insert |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |      | NumLk| Redo | Paste| Copy | Cut  | Undo |        |
+ * |        |      |      |      |      |      |      |      |  |      | NumLk| CapL | Homk | PgDn | PgUp | End  |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NAV] = LAYOUT(
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     KC_CAPS, KC_HOME, KC_UP  , KC_END , KC_PGUP, KC_DEL ,
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                     CAPSWRD, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_INS ,
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , KC_DEL ,
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                     CAPSWRD, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_INS ,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , KC_CAPS, KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX,
                                  _______, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT , KC_BSPC, KC_DEL , _______
     ),
 
@@ -141,20 +141,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Mouse Layer
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              | CapL | Wh L | M ↑  | Wh R | Wh U |        |
+ * |        |      |      |      |      |      |                              | Redo | Paste| Copy | Cut  | Undo | Acc 0  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  GUI |  Alt | Shift| Ctrl |      |                              | CapW |  M ← | M ↓  | M →  | Wh D |        |
+ * |        |  GUI |  Alt | Shift| Ctrl |      |                              |      |  M ← | M ↓  | M ↑  | M →  | Acc 1  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |      |      | Redo | Paste| Copy | Cut  | Undo |        |
+ * |        |      |      |      |      |      |      |      |  |      |      |      | Wh ← | Wh ↓ | Wh ↑ | Wh → | Acc 2  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      | R_CLK| L_CLK| M_CLK|      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_MOUSE] = LAYOUT(
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   /**/                   XXXXXXX, KC_WH_L, KC_MS_U, KC_WH_R, KC_WH_U, XXXXXXX,
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                   /**/                   XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, XXXXXXX,
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, /**/ XXXXXXX, XXXXXXX, U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   /**/                   U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , KC_ACL0,
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                   /**/                   XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_ACL1,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, /**/ XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_ACL2,
                                  _______, XXXXXXX, XXXXXXX, _______, XXXXXXX, /**/ XXXXXXX, KC_BTN2, KC_BTN1, KC_BTN3, _______
     ),
 
