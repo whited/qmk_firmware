@@ -30,41 +30,39 @@ enum layers {
     _MOUSE_SUPPORT // buttons useful when mousing with right hand
 };
 
-
 // Aliases for readability
-#define QWERTY   DF(_QWERTY)
-#define COLEMAK  DF(_COLEMAK_DH)
+#define QWERTY DF(_QWERTY)
+#define COLEMAK DF(_COLEMAK_DH)
 
 // Miryoku Layer switch key defs
-#define MI_ESC   LT(_MEDIA,KC_ESC)
-#define MI_SPC   LT(_NAV,KC_SPC)
-#define MI_TAB   LT(_MOUSE,KC_TAB)
-#define MI_ENT   LT(_SYM,KC_ENT)
-#define MI_BSPC  LT(_NUM,KC_BSPC)
-#define MI_DEL   LT(_FUN,KC_DEL)
+#define MI_ESC LT(_MEDIA, KC_ESC)
+#define MI_SPC LT(_NAV, KC_SPC)
+#define MI_TAB LT(_MOUSE, KC_TAB)
+#define MI_ENT LT(_SYM, KC_ENT)
+#define MI_BSPC LT(_NUM, KC_BSPC)
+#define MI_DEL LT(_FUN, KC_DEL)
 
-#define MOU_SUP  TG(_MOUSE_SUPPORT)
-
+#define MOU_SUP TG(_MOUSE_SUPPORT)
 
 // Home Row Mods (Qwerty)
-#define MQ_G_A   MT(MOD_LGUI, KC_A)
-#define MQ_A_S   MT(MOD_LALT, KC_S)
-#define MQ_S_D   MT(MOD_LSFT, KC_D)
-#define MQ_C_F   MT(MOD_LCTL, KC_F)
-#define MQ_C_J   MT(MOD_RCTL, KC_J)
-#define MQ_S_K   MT(MOD_RSFT, KC_K)
-#define MQ_A_L   MT(MOD_RALT, KC_L)
-#define MQ_G_SM  MT(MOD_RGUI, KC_SCLN)
+#define MQ_G_A MT(MOD_LGUI, KC_A)
+#define MQ_A_S MT(MOD_LALT, KC_S)
+#define MQ_S_D MT(MOD_LSFT, KC_D)
+#define MQ_C_F MT(MOD_LCTL, KC_F)
+#define MQ_C_J MT(MOD_RCTL, KC_J)
+#define MQ_S_K MT(MOD_RSFT, KC_K)
+#define MQ_A_L MT(MOD_RALT, KC_L)
+#define MQ_G_SM MT(MOD_RGUI, KC_SCLN)
 
 // Home Row Mods (Colemak DH)
-#define MC_G_A   MT(MOD_LGUI, KC_A)
-#define MC_A_R   MT(MOD_LALT, KC_R)
-#define MC_S_S   MT(MOD_LSFT, KC_S)
-#define MC_C_T   MT(MOD_LCTL, KC_T)
-#define MC_C_N   MT(MOD_RCTL, KC_N)
-#define MC_S_E   MT(MOD_RSFT, KC_E)
-#define MC_A_I   MT(MOD_RALT, KC_I)
-#define MC_G_O   MT(MOD_RGUI, KC_O)
+#define MC_G_A MT(MOD_LGUI, KC_A)
+#define MC_A_R MT(MOD_LALT, KC_R)
+#define MC_S_S MT(MOD_LSFT, KC_S)
+#define MC_C_T MT(MOD_LCTL, KC_T)
+#define MC_C_N MT(MOD_RCTL, KC_N)
+#define MC_S_E MT(MOD_RSFT, KC_E)
+#define MC_A_I MT(MOD_RALT, KC_I)
+#define MC_G_O MT(MOD_RGUI, KC_O)
 
 // Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
 // The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
@@ -90,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
      KC_GRV  , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                                        KC_J   , KC_L   , KC_U   , KC_Y   , KC_SCLN, KC_BSLS,
      KC_NO   , MC_G_A , MC_A_R , MC_S_S , MC_C_T , KC_G   ,                                        KC_M   , MC_C_N , MC_S_E , MC_A_I , MC_G_O , KC_QUOTE,
-     KC_LSPO , KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_NO  , MOU_SUP,    KC_NO  , KC_NO  , KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, KC_RSPC,
+     SC_LSPO , KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_NO  , MOU_SUP,    KC_NO  , KC_NO  , KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, SC_RSPC,
                                  KC_MPLY, MI_ESC , MI_SPC , MI_TAB , KC_LBRC,    KC_RBRC, MI_ENT , MI_BSPC, MI_DEL , KC_MUTE
     ),
 
@@ -112,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
      KC_GRV  , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                                        KC_Y   , KC_U   , KC_I ,   KC_O   , KC_P   , KC_BSLS,
      KC_NO   , MQ_G_A , MQ_A_S , MQ_S_D , MQ_C_F , KC_G   ,                                        KC_H   , MQ_C_J , MQ_S_K , MQ_A_L , MQ_G_SM, KC_QUOTE,
-     KC_LSPO , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_NO  , MOU_SUP,    KC_NO  , KC_NO  , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSPC,
+     SC_LSPO , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_NO  , MOU_SUP,    KC_NO  , KC_NO  , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, SC_RSPC,
                                  KC_MPLY, MI_ESC , MI_SPC , MI_TAB , KC_LBRC,    KC_RBRC, MI_ENT , MI_BSPC, MI_DEL , KC_MUTE
     ),
 
@@ -132,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_NAV] = LAYOUT(
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     U_RDO  ,  U_PST ,  U_CPY ,  U_CUT ,  U_UND , KC_DEL ,
-      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                     CAPSWRD, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_INS ,
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, XXXXXXX,                                     CW_TOGG, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_INS ,
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , KC_CAPS, KC_HOME, KC_PGDN, KC_PGUP, KC_END , XXXXXXX,
                                  _______, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT , KC_BSPC, KC_DEL , _______
     ),
@@ -310,7 +308,7 @@ bool oled_task_user(void) {
 
         // Host Keyboard Layer Status
         oled_write_P(PSTR("Layer: "), false);
-        switch (get_highest_layer(layer_state|default_layer_state)) {
+        switch (get_highest_layer(layer_state | default_layer_state)) {
             case _QWERTY:
                 oled_write_P(PSTR("QWERTY\n"), false);
                 break;
@@ -344,8 +342,8 @@ bool oled_task_user(void) {
 
         // Write host Keyboard LED Status to OLEDs
         led_t led_usb_state = host_keyboard_led_state();
-        oled_write_P(led_usb_state.num_lock    ? PSTR("NUMLCK ") : PSTR("       "), false);
-        oled_write_P(led_usb_state.caps_lock   ? PSTR("CAPLCK ") : PSTR("       "), false);
+        oled_write_P(led_usb_state.num_lock ? PSTR("NUMLCK ") : PSTR("       "), false);
+        oled_write_P(led_usb_state.caps_lock ? PSTR("CAPLCK ") : PSTR("       "), false);
         oled_write_P(led_usb_state.scroll_lock ? PSTR("SCRLCK ") : PSTR("       "), false);
 
         oled_write_P(is_caps_word_on() ? PSTR("CAPWRD ") : PSTR("       "), false);
