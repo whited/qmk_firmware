@@ -15,6 +15,9 @@
  */
 #include QMK_KEYBOARD_H
 
+#include "print.h"
+// #include "oled_driver.h"
+
 enum layers {
     _COLEMAK_DH = 0,
     _QWERTY,
@@ -284,6 +287,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     ),
 };
 
+// clang-format on
+
+#ifdef QUICK_TAP_TERM_PER_KEY
+/**
+ * Get the quick tap term for a specific keycode.
+ * This allows you to set a different quick tap term for each key.
+ * NOTE: When set to 0, this disables the key-repeat behaviour of a double-tap-hold (I hope)
+ */
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MI_ESC:
+        case MI_SPC:
+        case MI_TAB:
+        case MI_ENT:
+        case MI_BSPC:
+        case MI_DEL:
+            return 0; // disable potential tap-repeats for thumb layer-tap keys
+        default:
+            return QUICK_TAP_TERM;
+    }
+}
+#endif // QUICK_TAP_TERM_PER_KEY
+
 /* The default OLED and rotary encoder code can be found at the bottom of qmk_firmware/keyboards/splitkb/kyria/rev1/rev1.c
  * These default settings can be overriden by your own settings in your keymap.c
  * For your convenience, here's a copy of those settings so that you can uncomment them if you wish to apply your own modifications.
@@ -291,7 +317,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 #ifdef OLED_ENABLE
-oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    print("OLED oled_init_user called!\n");
+    return OLED_ROTATION_180;
+}
 
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
