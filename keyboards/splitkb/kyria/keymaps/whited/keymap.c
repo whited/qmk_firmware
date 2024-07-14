@@ -77,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: Colemak DH
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  ` ~   |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |  \  |  |
+ * |  ` ~   |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | "  ' |  \ |   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * | n/a    |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |  ' "   |
+ * | n/a    |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |  : ;   |
  * |        | LGUI | LALT | LSFT | LCTL |      |                              |      | RCTL | RSFT | RALT | RGUI |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * | LSh (  |   Z  |   X  |   C  |   D  |   V  | n/a  |M Supp|  | n/a  |  n/a |   K  |   H  | ,  < | . >  | /  ? | LSh ) |
@@ -89,8 +89,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_COLEMAK_DH] = LAYOUT(
-     KC_GRV  , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                                        KC_J   , KC_L   , KC_U   , KC_Y   , KC_SCLN, KC_BSLS,
-     KC_NO   , MC_G_A , MC_A_R , MC_S_S , MC_C_T , KC_G   ,                                        KC_M   , MC_C_N , MC_S_E , MC_A_I , MC_G_O , KC_QUOTE,
+     KC_GRV  , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                                        KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOTE, KC_BSLS,
+     KC_NO   , MC_G_A , MC_A_R , MC_S_S , MC_C_T , KC_G   ,                                        KC_M   , MC_C_N , MC_S_E , MC_A_I , MC_G_O , KC_SCLN,
      SC_LSPO , KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_NO  , MOU_SUP,    KC_NO  , KC_NO  , KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, SC_RSPC,
                                  KC_MPLY, MI_ESC , MI_SPC , MI_TAB , KC_LBRC,    KC_RBRC, MI_ENT , MI_BSPC, MI_DEL , KC_MUTE
     ),
